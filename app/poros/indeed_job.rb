@@ -1,14 +1,15 @@
+# frozen_string_literal: true
+
+# indeed job poro
 class IndeedJob
   def initialize(data)
     @data = data
   end
 
   def title
-    if @data.css('h2.jobTitle').css('span').count == 1
-      @data.css('h2.jobTitle').css('span').css('span')[0].attributes['title'].value
-    else
-      @data.css('h2.jobTitle').css('span').css('span')[1].attributes['title'].value
-    end
+    return title_sector.css('span')[0].attributes['title'].value if title_sector.count == 1
+
+    title_sector.css('span')[1].attributes['title'].value
   end
 
   def company
@@ -16,15 +17,13 @@ class IndeedJob
   end
 
   def datePosted
-    if @data.css('span.date')[0].children.count == 1
-      @data.css('span.date')[0].children[0].text
-    else
-      @data.css('span.date')[0].children[1].text
-    end
+    return date_sector[0].text if date_sector.count == 1
+
+    date_sector[1].text
   end
 
   def url
-    'www.indeed.com' + @data.css('h2.jobTitle').css('a')[0].attributes['href'].value
+    "www.indeed.com#{@data.css('h2.jobTitle').css('a')[0].attributes['href'].value}"
   end
 
   def description
@@ -32,18 +31,32 @@ class IndeedJob
   end
 
   def location
-    if @data.css('div.companyLocation')[0].children.children.count == 1
-      @data.css('div.companyLocation')[0].children.children[0].text
-    else
-      @data.css('div.companyLocation')[0].children[0].text
-    end
+    location_sector.children[0].text if location_sector.children.count == 1
+
+    location_sector[0].text
   end
 
   def salary
-    if @data.css('div.salary-snippet-container').to_a == []
-      'Not provided'
-    else
-      @data.css('div.salary-snippet-container')[0].children[0].children[1].text
-    end
+    return 'Not provided' if salary_sector.to_a == []
+
+    salary_sector[0].children[0].children[1].text
+  end
+
+  private
+
+  def date_sector
+    @data.css('span.date')[0].children
+  end
+
+  def title_sector
+    @data.css('h2.jobTitle').css('span')
+  end
+
+  def salary_sector
+    @data.css('div.salary-snippet-container')
+  end
+
+  def location_sector
+    @data.css('div.companyLocation')[0].children
   end
 end
