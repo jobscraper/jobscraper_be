@@ -1,3 +1,6 @@
+# frozen_string_literal: true
+
+# graphql controller handles qpi request
 class GraphqlController < ApplicationController
   # If accessing from outside this domain, nullify the session
   # This allows for outside API access while preventing CSRF attacks,
@@ -26,11 +29,7 @@ class GraphqlController < ApplicationController
   def prepare_variables(variables_param)
     case variables_param
     when String
-      if variables_param.present?
-        JSON.parse(variables_param) || {}
-      else
-        {}
-      end
+      handle_string
     when Hash
       variables_param
     when ActionController::Parameters
@@ -47,5 +46,13 @@ class GraphqlController < ApplicationController
     logger.error e.backtrace.join("\n")
 
     render json: { errors: [{ message: e.message, backtrace: e.backtrace }], data: {} }, status: :internal_server_error
+  end
+
+  def handle_string
+    if variables_param.present?
+      JSON.parse(variables_param) || {}
+    else
+      {}
+    end
   end
 end

@@ -1,4 +1,7 @@
+# frozen_string_literal: true
+
 module Types
+  # defines fields for graphql api call
   class QueryType < Types::BaseObject
     # Add `node(id: ID!) and `nodes(ids: [ID!]!)`
     include GraphQL::Types::Relay::HasNodeField
@@ -18,7 +21,7 @@ module Types
       argument :keyword, String
     end
     def indeedJobs(keyword:)
-      IndeedService.sixty_results(keyword)
+      IndeedService.thirty_results(keyword)
     end
   end
 end

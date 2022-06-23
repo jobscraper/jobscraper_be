@@ -1,3 +1,6 @@
+# frozen_string_literal: true
+
+# schema for jobscraper
 class JobscraperBeSchema < GraphQL::Schema
   mutation(Types::MutationType)
   query(Types::QueryType)

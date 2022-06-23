@@ -168,33 +168,16 @@ Rails/WhereExists: # new in 2.7
   Enabled: true
 Rails/WhereNot: # new in 2.8
   Enabled: true
-
-
-Style/FrozenStringLiteralComment:
+# to be consistent with FE/js
+Naming/MethodName: 
   Enabled: false
-Naming/VariableNumber:
-  Enabled: false
-Style/RedundantFetchBlock:
-  Enabled: false
-Style/GlobalStdStream:
-  Enabled: false
-Style/Documentation:
-  Enabled: false
-Rails/FilePath:
-  Enabled: false
-Layout/TrailingEmptyLines:
-  Enabled: false
-Style/ClassAndModuleChildren:
-  Enabled: false
-Style/StringConcatenation:
-  Enabled: false
-Naming/MethodName:
-  Enabled: false
+# graphql related
 Metrics/MethodLength:
+  Enabled: false
+Naming/MethodParameterName:
   Enabled: false
 Lint/UselessMethodDefinition:
   Enabled: false
-Metrics/AbcSize:
-  Enabled: false
-Naming/MethodParameterName:
+# unsafe cop
+Style/GlobalStdStream:
   Enabled: false
