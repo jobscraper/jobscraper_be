@@ -14,8 +14,8 @@ module Types
     #   "Hello World!"
     # end
 
-    field :indeedJobs, [Types::IndeedJobType], null: false do 
-     argument :keyword, String
+    field :indeedJobs, [Types::IndeedJobType], null: false do
+      argument :keyword, String
     end
     def indeedJobs(keyword:)
       IndeedService.sixty_results(keyword)
