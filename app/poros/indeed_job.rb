@@ -40,10 +40,10 @@ class IndeedJob
   end
 
   def salary
-    if @data.css('div.salary-snippet-container').to_a != []
-      @data.css('div.salary-snippet-container')[0].children[0].children[1].text
-    else
+    if @data.css('div.salary-snippet-container').to_a == []
       'Not provided'
+    else
+      @data.css('div.salary-snippet-container')[0].children[0].children[1].text
     end
   end
 end
