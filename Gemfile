@@ -37,6 +37,7 @@ gem "bootsnap", require: false
 # gem "rack-cors"
 gem 'httparty'
 gem 'nokogiri'
+gem 'graphql'
 
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
@@ -48,5 +49,6 @@ end
 group :development do
   # Speed up commands on slow machines / big apps [https://github.com/rails/spring]
   # gem "spring"
+  gem 'graphiql-rails', '1.4.10'
 end
 
