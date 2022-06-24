@@ -43,17 +43,19 @@ gem 'httparty'
 gem 'nokogiri'
 gem 'rubocop'
 gem 'rubocop-rails'
+gem 'net-http'
+gem 'pg', '>= 0.18', '< 2.0'
+
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
   # gem "debug", platforms: %i[ mri mingw x64_mingw ]
   gem 'pry'
   gem 'rspec-rails'
-  gem 'pg', '>= 0.18', '< 2.0'
 end
 
 group :development do
   # Speed up commands on slow machines / big apps [https://github.com/rails/spring]
   # gem "spring"
   gem 'graphiql-rails', '1.4.10'
-  gem 'pg', '>= 0.18', '< 2.0'
+  
 end
