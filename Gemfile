@@ -45,6 +45,9 @@ gem 'rubocop'
 gem 'rubocop-rails'
 gem 'net-http'
 gem 'pg', '>= 0.18', '< 2.0'
+gem 'sass-rails'
+gem 'uglifier'
+gem 'coffee-rails'
 
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
