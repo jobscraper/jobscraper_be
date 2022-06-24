@@ -48,7 +48,7 @@ group :development, :test do
   # gem "debug", platforms: %i[ mri mingw x64_mingw ]
   gem 'pry'
   gem 'rspec-rails'
-  gem 'sqlite3', '~> 1.4'
+  gem 'pg', '>= 0.18', '< 2.0'
 end
 
 group :development do
