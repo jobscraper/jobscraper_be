@@ -8,7 +8,6 @@ class FlexjobsService
       unparsed_page = HTTParty.get(url)
       parsed_page = Nokogiri::HTML(unparsed_page.body)
       job_cards = parsed_page.css('li.m-0')
-
       job_cards.map { |job_data| Flexjob.new(job_data) }
     end
 
