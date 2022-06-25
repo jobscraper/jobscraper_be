@@ -37,17 +37,17 @@ gem 'bootsnap', require: false
 # gem "rack-cors"
 gem 'brakeman'
 gem 'bundler-audit'
-gem 'graphql'
-gem 'httparty'
-gem 'nokogiri'
-gem 'rubocop'
-gem 'rubocop-rails'
-gem 'net-http'
-gem 'pg', '>= 0.18', '< 2.0'
-gem 'sass-rails'
-gem 'uglifier'
 gem 'coffee-rails'
 gem 'graphiql-rails', '1.4.10'
+gem 'graphql'
+gem 'httparty'
+gem 'net-http'
+gem 'nokogiri'
+gem 'pg', '>= 0.18', '< 2.0'
+gem 'rubocop'
+gem 'rubocop-rails'
+gem 'sass-rails'
+gem 'uglifier'
 
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
