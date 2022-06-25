@@ -4,7 +4,7 @@
 class IndeedService
   class << self
     def scraper(keyword, start = 0)
-      url = "https://www.indeed.com/jobs?q=#{keyword}&start=#{start}&fromage=14"
+      url = "https://www.indeed.com/jobs?q=#{keyword}&fromage=3&start=#{start}&vjk=b277dac7645d5b76"
       unparsed_page = HTTParty.get(url)
       parsed_page = Nokogiri::HTML(unparsed_page.body)
       job_cards = parsed_page.css('div.job_seen_beacon')
