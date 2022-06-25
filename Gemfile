@@ -44,11 +44,11 @@ gem 'httparty'
 gem 'net-http'
 gem 'nokogiri'
 gem 'pg', '>= 0.18', '< 2.0'
+gem 'rack-cors', require: 'rack/cors'
 gem 'rubocop'
 gem 'rubocop-rails'
 gem 'sass-rails'
 gem 'uglifier'
-gem 'rack-cors', :require => 'rack/cors'
 
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
