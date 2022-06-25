@@ -11,10 +11,10 @@ class IndeedService
       job_cards.map { |job_data| IndeedJob.new(job_data) }
     end
 
-    def thirty_results(keyword)
-      0.step(by: 10, to: 10).to_a.map do |start|
-        scraper(keyword, start)
-      end.flatten
-    end
+    # def thirty_results(keyword)
+    #   0.step(by: 10, to: 10).to_a.map do |start|
+    #     scraper(keyword, start)
+    #   end.flatten
+    # end
   end
 end
