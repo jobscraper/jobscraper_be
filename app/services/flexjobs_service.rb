@@ -11,27 +11,6 @@ class FlexjobsService
 
       job_cards.map { |job_data| Flexjob.new(job_data) }
       require 'pry'; binding.pry
-      # titles = job_cards.map {|job_data| 
-      #   job_data.attributes['data-title'].value
-      # }
-
-      # locations = job_cards.map {|job_data| 
-      #   job_data.css('div.job-locations')[0].children.first.text.strip +
-      #   job_data.css('span.job-tag')[0].children[0].text
-      # }
-
-      # datePosted = job_cards.map {|job_data| 
-      #   job_data.css('div.job-age')[0].children.last.text.strip
-      # }
-
-      # url = job_cards.map {|job_data| 
-      #   'https://www.flexjobs.com/'+
-      #   job_data.css('a.job-link')[0].attributes['href'].value
-      # }
-
-      # description = job_cards.map {|job_data| 
-      #   job_data.css('div.job-description')[0].children[0].text.strip
-      # }
     end
 
     # def thirty_results(keyword)
