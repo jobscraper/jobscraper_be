@@ -4,12 +4,10 @@ source 'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby '2.7.4'
-
 # Bundle edge Rails instead: gem "rails", github: "rails/rails", branch: "main"
 gem 'rails', '~> 7.0.3'
 
 # Use sqlite3 as the database for Active Record
-gem 'sqlite3', '~> 1.4'
 
 # Use the Puma web server [https://github.com/puma/puma]
 gem 'puma', '~> 5.0'
@@ -31,7 +29,7 @@ gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]
 
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', require: false
-gem 'pg', '>= 0.18', '< 2.0'
+
 # Use Active Storage variants [https://guides.rubyonrails.org/active_storage_overview.html#transforming-images]
 # gem "image_processing", "~> 1.2"
 
@@ -39,11 +37,18 @@ gem 'pg', '>= 0.18', '< 2.0'
 # gem "rack-cors"
 gem 'brakeman'
 gem 'bundler-audit'
+gem 'coffee-rails'
+gem 'graphiql-rails', '1.4.10'
 gem 'graphql'
 gem 'httparty'
+gem 'net-http'
 gem 'nokogiri'
+gem 'pg', '>= 0.18', '< 2.0'
 gem 'rubocop'
 gem 'rubocop-rails'
+gem 'sass-rails'
+gem 'uglifier'
+
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
   # gem "debug", platforms: %i[ mri mingw x64_mingw ]
@@ -54,5 +59,4 @@ end
 group :development do
   # Speed up commands on slow machines / big apps [https://github.com/rails/spring]
   # gem "spring"
-  gem 'graphiql-rails', '1.4.10'
 end
