@@ -23,5 +23,12 @@ module Types
     def indeedJobs(keyword:)
       IndeedService.thirty_results(keyword)
     end
+
+    field :flexjobs, [Types::FlexjobType], null: false do
+      argument :keyword, String
+    end
+    def flexjobs(keyword:)
+      FlexjobsService.scraper(keyword)
+    end
   end
 end
