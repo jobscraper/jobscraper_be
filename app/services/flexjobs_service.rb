@@ -10,7 +10,6 @@ class FlexjobsService
       job_cards = parsed_page.css('li.m-0')
 
       job_cards.map { |job_data| Flexjob.new(job_data) }
-      require 'pry'; binding.pry
     end
 
     # def thirty_results(keyword)
