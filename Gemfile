@@ -47,6 +47,7 @@ gem 'pg', '>= 0.18', '< 2.0'
 gem 'sass-rails'
 gem 'uglifier'
 gem 'coffee-rails'
+gem 'graphiql-rails', '1.4.10'
 
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
@@ -58,6 +59,4 @@ end
 group :development do
   # Speed up commands on slow machines / big apps [https://github.com/rails/spring]
   # gem "spring"
-  gem 'graphiql-rails', '1.4.10'
-  
 end
